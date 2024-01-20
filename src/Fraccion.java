@@ -34,11 +34,11 @@ public class Fraccion {
   * @param b Segunda fracción
   * @return Fracción resultado de la operación
   */
-    public static Fraccion sumar(Fraccion a, Fraccion b){
+    public  Fraccion sumar(Fraccion a, Fraccion b){
     Fraccion c=new Fraccion();
     c.num=a.num*b.den+b.num*a.den;
     c.den=a.den*b.den;
-    return c;
+    return c.simplificar();
  }
     /**
      * Función para restar dos fracciones
@@ -47,24 +47,25 @@ public class Fraccion {
      * @return Fracción resultado de la operación
      */
     
-    public static Fraccion restar(Fraccion a, Fraccion b){
+    public Fraccion restar(Fraccion a, Fraccion b){
     Fraccion c=new Fraccion();
     c.num=a.num*b.den-b.num*a.den;
     c.den=a.den*b.den;
-    return c;
+    return c.simplificar();
  }
 
 
-    public static Fraccion multiplicar(Fraccion a, Fraccion b){
-    return new Fraccion(a.num*b.num, a.den*b.den);
+    public  Fraccion multiplicar(Fraccion a, Fraccion b){
+    Fraccion c = new Fraccion(a.num*b.num, a.den*b.den);
+    return c.simplificar();
  }
  
-    public static Fraccion inversa(Fraccion a){
-    return new Fraccion(a.den, a.num);
+    public  Fraccion inversa(Fraccion a){
+    return new Fraccion(a.den, a.num).simplificar();
  }
  
-    public static Fraccion dividir(Fraccion a, Fraccion b){
-    return multiplicar(a, inversa(b));
+    public  Fraccion dividir(Fraccion a, Fraccion b){
+    return multiplicar(a, inversa(b)).simplificar();
  }
 
  

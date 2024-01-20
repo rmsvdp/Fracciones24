@@ -56,7 +56,7 @@ public class FraccionC {
 	        FraccionC aux = new FraccionC();
 	        aux.num = this.num * f.den + this.den * f.num;
 	        aux.den = this.den * f.den;
-	        //aux.simplificar();  //se simplifica antes de devolverla                                                   
+	        aux.simplificar();
 	        return aux;
 	    }
 	   
